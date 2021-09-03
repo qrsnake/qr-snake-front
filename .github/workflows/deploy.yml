@@ -28,6 +28,18 @@ jobs:
       - name: Install Node.js dependencies
         run: npm i
       - name: Deploy
-        run: npm run deploy
+        run: |
+          npm run build
+          cd dist
+          git init
+          git config --global user.email "qrsnake@gmail.com"
+          git config --global user.name "deploy-bot"
+          git checkout -b main
+          git add -A
+          git commit -m 'deploy'
+
+          git push -f git@github.com:qrsnake/qr-snake-front.git main:gh-pages
+
+          cd -
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
