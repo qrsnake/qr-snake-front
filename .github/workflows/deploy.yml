@@ -27,7 +27,7 @@ jobs:
       - name: Install Node.js dependencies
         run: npm i
       - name: set git login
-        uses: fregante/setup-git-user@v1
+      - uses: fregante/setup-git-user@v1
       - name: Deploy
         run: npm run deploy
         env:
