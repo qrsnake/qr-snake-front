@@ -17,19 +17,17 @@ jobs:
 
     steps:
       - name: Check out Git repository
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
       - name: Set up Node.js
-        uses: actions/setup-node@v1
+      - uses: actions/setup-node@v1
         with:
           node-version: 14
 
       - name: Install Node.js dependencies
         run: npm i
       - name: set git login
-        run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
+        uses: fregante/setup-git-user@v1
       - name: Deploy
         run: npm run deploy
         env:
