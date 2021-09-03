@@ -27,7 +27,7 @@ jobs:
       - name: Install Node.js dependencies
         run: npm i
       - name: Deploy
-      - uses: fregante/setup-git-user@v1
+        uses: fregante/setup-git-user@v1
       - run: npm run deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
