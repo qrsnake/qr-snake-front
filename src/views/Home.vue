@@ -1,18 +1,58 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <div>
+      <v-btn
+        class="ma-2"
+        outlined
+        color="indigo"
+        @click="increment"
+      >
+        Listar Alunos
+      </v-btn>
+      <v-btn
+        class="ma-2"
+        outlined
+        color="indigo"
+      >
+        Cadastrar Animal
+      </v-btn>
+    </div>
+    <div>
+      <v-btn
+        class="ma-2"
+        outlined
+        color="indigo"
+      >
+        Ler QRcode
+      </v-btn>
+      {{ count }}
+      {{ counter }}
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
-  }
+  data: () => ({
+    test: 'batata&potato',
+    status: true,
+    count: 0,
+  }),
+  computed: {
+    counter() {
+      return `o valor é ${this.count}`;
+    },
+  },
+  methods: {
+    increment() {
+      this.count += 1;
+    }
+  },
 }
 </script>
+
+<style lang="scss" scoped>
+
+</style>
