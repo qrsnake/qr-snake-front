@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>
+    <div class="ImageMain">
       <v-img
         lazy-src="https://picsum.photos/id/11/10/6"
         max-height="300"
@@ -8,15 +8,15 @@
         src="https://picsum.photos/id/11/500/300"
       ></v-img>
     </div>
-    <div>
+    <div class="EmailMain">
       <v-text-field
         label="Email"
         placeholder="Email"
         outlined
-        
+        align="center"
       ></v-text-field>
     </div>
-    <div>
+    <div class="PasswordMain">
       <v-text-field
         :append-icon="show3 ? 'mdi-eye' : 'mdi-eye-off'"
         :rules="[rules.required, rules.min]"
@@ -27,13 +27,15 @@
         class="input-group--focused"
         @click:append="show3 = !show3"
         outlined
+        align="center"
       ></v-text-field>
     </div>
-    <div>
+    <div class="ButtonMain">
       <v-btn
         class="ma-2"
         outlined
         color="indigo"
+        align="center"
       >
         Entrar
       </v-btn>
@@ -66,5 +68,27 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.ImageMain{
+  padding: 50px 50px;
+  align-items: center;
+  justify-items: center;
+}
 
+.EmailMain{
+  padding: 50px 50px;
+  align-items: center;
+  justify-items: center;
+}
+
+.PasswordMain{
+  padding: 50px 50px;
+  align-items: center;
+  justify-items: center;
+}
+
+.ButtonMain{
+  padding: 50px 50px;
+  align-items: center;
+  justify-items: center;
+}
 </style>
