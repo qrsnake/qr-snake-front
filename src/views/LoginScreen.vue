@@ -1,14 +1,14 @@
 <template>
   <div>
-    <div class="ImageMain">
+    <div class="image-main">
       <v-img
-        lazy-src="https://picsum.photos/id/11/10/6"
-        max-height="300"
-        max-width="250"
-        src="https://picsum.photos/id/11/500/300"
+        lazy-src="../assets/kek pekora.png"
+        src="../assets/kek pekora.png"
+        max-height="500"
+        max-width="500"
       ></v-img>
     </div>
-    <div class="EmailMain">
+    <div class="email-main">
       <v-text-field
         label="Email"
         placeholder="Email"
@@ -16,7 +16,7 @@
         align="center"
       ></v-text-field>
     </div>
-    <div class="PasswordMain">
+    <div class="password-main">
       <v-text-field
         :append-icon="show3 ? 'mdi-eye' : 'mdi-eye-off'"
         :rules="[rules.required, rules.min]"
@@ -30,7 +30,7 @@
         align="center"
       ></v-text-field>
     </div>
-    <div class="ButtonMain">
+    <div class="button-main">
       <v-btn
         class="ma-2"
         outlined
@@ -68,27 +68,27 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.ImageMain{
+.image-main{
   padding: 50px 50px;
-  align-items: center;
-  justify-items: center;
+  display: flex;
+  justify-content: center;
 }
 
-.EmailMain{
+.email-main{
   padding: 50px 50px;
-  align-items: center;
-  justify-items: center;
+  display: flex;
+  justify-content: center;
 }
 
-.PasswordMain{
+.password-main{
   padding: 50px 50px;
-  align-items: center;
-  justify-items: center;
+  display: flex;
+  justify-content: center;
 }
 
-.ButtonMain{
+.button-main{
   padding: 50px 50px;
-  align-items: center;
-  justify-items: center;
+  display: flex;
+  justify-content: center;
 }
 </style>
