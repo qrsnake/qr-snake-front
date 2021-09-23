@@ -77,13 +77,13 @@ export default {
 }
 
 .email-main{
-  padding: 1% 3%;
+  padding: 1% 9%;
   display: flex;
   justify-content: center;
 }
 
 .password-main{
-  padding: 1% 3%;
+  padding: 1% 9%;
   display: flex;
   justify-content: center;
 }

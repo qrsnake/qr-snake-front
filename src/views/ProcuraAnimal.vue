@@ -17,6 +17,7 @@
       >
         Listar Especies
       </v-btn>
+
       <v-btn
         class="ma-2"
         outlined
@@ -24,9 +25,11 @@
       >
         Cadastrar Animal
       </v-btn>
+
     </div>
     <div class="id-css">
       <v-text-field
+        class="chip-css"
         label="Digite o ID de chip de rastreamento"
         placeholder="ID"
         outlined
@@ -40,9 +43,8 @@
       >
         Ler QRcode
       </v-btn>
-      {{ count }}
-      {{ counter }}
     </div>
+
   </div>
 </template>
 
@@ -73,19 +75,24 @@ export default {
 .main-css{
   padding: 1% 3%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .component-css{
   padding: 1% 3%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .id-css{
   padding: 1% 3%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
+.chip-css{
+  display: flex;
+  justify-content: space-between;
+  max-width: 50%;
+}
 </style>
