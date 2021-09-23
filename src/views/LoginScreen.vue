@@ -13,6 +13,7 @@
         label="Email"
         placeholder="Email"
         outlined
+        filled
         align="center"
       ></v-text-field>
     </div>
@@ -23,10 +24,11 @@
         :type="show3 ? 'text' : 'password'"
         name="input-10-2"
         label="Senha"
-        hint="At least 8 characters"
+        hint="Min 8 characters"
         class="input-group--focused"
         @click:append="show3 = !show3"
         outlined
+        filled
         align="center"
       ></v-text-field>
     </div>
@@ -56,11 +58,11 @@ export default {
       show2: true,
       show3: false,
       show4: false,
-      password: 'Password',
+      password: 'Senha',
       rules: {
-        required: value => !!value || 'Required.',
+        required: value => !!value || 'Obrigatorio.',
         min: v => v.length >= 8 || 'Min 8 characters',
-        emailMatch: () => (`The email and password you entered don't match`),
+        emailMatch: () => (`Email e senha nao batem.`),
       },
     }
   },
@@ -69,25 +71,25 @@ export default {
 
 <style lang="scss" scoped>
 .image-main{
-  padding: 50px 50px;
+  padding: 1% 3%;
   display: flex;
   justify-content: center;
 }
 
 .email-main{
-  padding: 50px 50px;
+  padding: 1% 3%;
   display: flex;
   justify-content: center;
 }
 
 .password-main{
-  padding: 50px 50px;
+  padding: 1% 3%;
   display: flex;
   justify-content: center;
 }
 
 .button-main{
-  padding: 50px 50px;
+  padding: 1% 3%;
   display: flex;
   justify-content: center;
 }
