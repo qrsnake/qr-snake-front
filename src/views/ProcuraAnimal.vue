@@ -5,7 +5,6 @@
         class="ma-2"
         outlined
         color="indigo"
-        @click="increment"
       >
         Listar Alunos
       </v-btn>
@@ -13,7 +12,6 @@
         class="ma-2"
         outlined
         color="indigo"
-        @click="increment"
       >
         Listar Especies
       </v-btn>
@@ -53,109 +51,154 @@
         label="Numero do Chip"
         outlined
         align="center"
+        disabled
       ></v-text-field>
 
       <v-text-field
         label="Especie"
         outlined
         align="center"
+        disabled
       ></v-text-field>
 
       <v-text-field
         label="Nome Comum"
         outlined
         align="center"
+        disabled
       ></v-text-field>
 
       <v-text-field
         label="Denticao"
         outlined
         align="center"
+        disabled
       ></v-text-field>
 
       <v-text-field
         label="Reproducao"
         outlined
         align="center"
+        disabled
       ></v-text-field>
 
       <v-text-field
         label="Alimentacao"
         outlined
         align="center"
+        disabled
       ></v-text-field>
 
       <v-text-field
         label="Habitat"
         outlined
         align="center"
+        disabled
       ></v-text-field>     
 
       <v-text-field
         label="Data chegada"
         outlined
         align="center"
+        disabled
       ></v-text-field>
 
       <v-text-field
         label="Local de origem"
         outlined
         align="center"
+        disabled
       ></v-text-field>     
 
       <v-text-field
         label="Municipio"
         outlined
         align="center"
+        disabled
       ></v-text-field>
 
       <v-text-field
         label="Term./Doacao"
         outlined
         align="center"
+        disabled
       ></v-text-field>
 
       <v-text-field
         label="Massa (g) de entrada"
         outlined
         align="center"
+        disabled
       ></v-text-field>    
 
       <v-text-field
         label="Total - Entrada"
         outlined
         align="center"
+        disabled
       ></v-text-field>
 
       <v-text-field
         label="Causa - Entrada"
         outlined
         align="center"
+        disabled
       ></v-text-field>
 
       <v-text-field
         label="Idade"
         outlined
         align="center"
+        disabled
       ></v-text-field>     
 
-      <v-text-field
+      <v-select
+        :items="sexos"
         label="Sexo"
         outlined
         align="center"
-      ></v-text-field>    
+      ></v-select>    
 
       <v-text-field
         label="Situacao"
         outlined
         align="center"
+        disabled
       ></v-text-field>
 
+      <!--
       <v-text-field
         label="Data de Obito"
         outlined
         align="center"
+        disabled
       ></v-text-field>
+      -->
+
+      <v-menu
+        v-model="menu2"
+        :close-on-content-click="false"
+        :nudge-right="40"
+        transition="scale-transition"
+        offset-y
+        min-width="auto"
+      >
+        <template v-slot:activator="{ on, attrs }">
+          <v-text-field
+            v-model="date"
+            label="Picker without buttons"
+            prepend-icon="mdi-calendar"
+            readonly
+            v-bind="attrs"
+            v-on="on"
+          ></v-text-field>
+        </template>
+        <v-date-picker
+          v-model="date"
+          @input="menu2 = false"
+        ></v-date-picker>
+      </v-menu>
+
     </div>
   </div>
 </template>
@@ -165,20 +208,13 @@
 export default {
   name: 'Home',
   data: () => ({
-    test: 'batata&potato',
+    sexos: ['Macho', 'Femea', 'Nao identificado'],
+    date: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10),
+    menu: false,
+    modal: false,
+    menu2: false,
     status: true,
-    count: 0,
   }),
-  computed: {
-    counter() {
-      return `o valor é ${this.count}`;
-    },
-  },
-  methods: {
-    increment() {
-      this.count += 1;
-    }
-  },
 }
 </script>
 
