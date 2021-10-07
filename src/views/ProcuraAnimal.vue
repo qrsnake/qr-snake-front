@@ -68,40 +68,64 @@
         disabled
       ></v-text-field>
 
-      <v-text-field
+      <v-select
+        :items="denticoes"
         label="Denticao"
         outlined
         align="center"
         disabled
-      ></v-text-field>
+      ></v-select>
 
-      <v-text-field
+      <v-select
+        :items="reproducoes"
         label="Reproducao"
         outlined
         align="center"
         disabled
-      ></v-text-field>
+      ></v-select> 
 
-      <v-text-field
+      <v-select
+        :items="reproducoes"
         label="Alimentacao"
         outlined
         align="center"
+        multiple
         disabled
-      ></v-text-field>
+      ></v-select>
 
-      <v-text-field
+      <v-select
+        :items="habitats"
         label="Habitat"
         outlined
         align="center"
+        multiple
         disabled
-      ></v-text-field>     
+      ></v-select>    
 
-      <v-text-field
-        label="Data chegada"
-        outlined
-        align="center"
+      <v-menu
+        v-model="menu2"
+        :close-on-content-click="false"
+        :nudge-right="40"
+        transition="scale-transition"
+        offset-y
+        min-width="auto"
         disabled
-      ></v-text-field>
+      >
+        <template v-slot:activator="{ on, attrs }">
+          <v-text-field
+            v-model="date"
+            label="Data de Chegada"
+            prepend-icon="mdi-calendar"
+            readonly
+            v-bind="attrs"
+            v-on="on"
+          ></v-text-field>
+        </template>
+        <v-date-picker
+          v-model="date"
+          @input="menuChegada = false"
+        ></v-date-picker>
+      </v-menu>
 
       <v-text-field
         label="Local de origem"
@@ -117,12 +141,13 @@
         disabled
       ></v-text-field>
 
-      <v-text-field
+      <v-select
+        :items="afirmacao"
         label="Term./Doacao"
         outlined
         align="center"
         disabled
-      ></v-text-field>
+      ></v-select> 
 
       <v-text-field
         label="Massa (g) de entrada"
@@ -139,42 +164,36 @@
       ></v-text-field>
 
       <v-text-field
-        label="Causa - Entrada"
+        label="Cauda - Entrada"
         outlined
         align="center"
         disabled
       ></v-text-field>
 
-      <v-text-field
+      <v-select
+        :items="idades"
         label="Idade"
         outlined
         align="center"
         disabled
-      ></v-text-field>     
+      ></v-select>     
 
       <v-select
         :items="sexos"
         label="Sexo"
         outlined
         align="center"
+        disabled
       ></v-select>    
 
-      <v-text-field
+      <v-select
+        :items="situacoes"
         label="Situacao"
         outlined
         align="center"
         disabled
-      ></v-text-field>
-
-      <!--
-      <v-text-field
-        label="Data de Obito"
-        outlined
-        align="center"
-        disabled
-      ></v-text-field>
-      -->
-
+      ></v-select>
+      
       <v-menu
         v-model="menu2"
         :close-on-content-click="false"
@@ -182,11 +201,12 @@
         transition="scale-transition"
         offset-y
         min-width="auto"
+        disabled
       >
         <template v-slot:activator="{ on, attrs }">
           <v-text-field
             v-model="date"
-            label="Picker without buttons"
+            label="Data de Obito"
             prepend-icon="mdi-calendar"
             readonly
             v-bind="attrs"
@@ -195,7 +215,7 @@
         </template>
         <v-date-picker
           v-model="date"
-          @input="menu2 = false"
+          @input="menuObito = false"
         ></v-date-picker>
       </v-menu>
 
@@ -208,12 +228,16 @@
 export default {
   name: 'Home',
   data: () => ({
-    sexos: ['Macho', 'Femea', 'Nao identificado'],
+    sexos: ['Macho', 'Femea', 'Não identificado'],
+    reproducoes: ['Viviparidade', 'Oviparidade', 'Não identificado'],
+    habitats: ['Terrícula', 'Arborícola', 'Subterrânea', 'Aquática'],
+    afirmacao: ['Sim', 'Não', 'N/A'],
+    idades: ['Filhote', 'Jovem', 'Adulto'],
+    situacoes: ['Viva', 'Óbito', 'Reintroduzida'],
+    denticoes: ['Solenóglifa', 'Áglifa', 'Opistóglifa', 'Proteróglifa', 'Não identificado'],
     date: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10),
-    menu: false,
-    modal: false,
-    menu2: false,
-    status: true,
+    menuChegada: false,
+    menuObito: false
   }),
 }
 </script>
