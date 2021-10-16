@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="all-search">
     <div class="main-css">
       <v-btn
         class="ma-2"
@@ -82,6 +82,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.all-search {
+  margin-left: 300px;
+  margin-right: 300px;
+}
 
 .main-css{
   padding: 1% 3%;

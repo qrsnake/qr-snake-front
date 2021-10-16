@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="all-cad">
     <div class="camp-css">
       <v-text-field
         label="Numero do Chip"
@@ -207,6 +207,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.all-cad {
+  margin-left: 300px;
+  margin-right: 300px;
+}
 
 .main-css{
   padding: 1% 3%;
