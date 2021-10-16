@@ -30,8 +30,7 @@
     <div class="id-css">
       <v-text-field
         class="chip-css"
-        label="Digite o ID de chip de rastreamento"
-        placeholder="ID"
+        placeholder="Digite o ID do chip de rastreamento"
         outlined
         filled
         align="center"
