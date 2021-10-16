@@ -137,30 +137,19 @@
         outlined
         align="center"
       ></v-select>
-      
-      <v-menu
-        :close-on-content-click="false"
-        :nudge-right="40"
-        transition="scale-transition"
-        offset-y
-        min-width="auto"
+      <v-text-field
+        outlined
+        label="Número do chip"
       >
-        <template v-slot:activator="{ on, attrs }">
-          <v-text-field
-            v-model="date"
-            label="Data de Obito"
-            prepend-icon="mdi-calendar"
-            readonly
-            v-bind="attrs"
-            v-on="on"
-          ></v-text-field>
-        </template>
-        <v-date-picker
-          v-model="date"
-          @input="menuObito = false"
-        ></v-date-picker>
-      </v-menu>
-
+        Numero do chip
+      </v-text-field>
+      <v-textarea
+        outlined
+        placeholder="Observações"
+        row="2"
+      >
+        Observações
+      </v-textarea>
     </div>
     <div>
       <v-btn
