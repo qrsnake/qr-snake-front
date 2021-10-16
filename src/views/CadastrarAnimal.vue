@@ -55,7 +55,6 @@
       ></v-select>    
 
       <v-menu
-        v-model="menu2"
         :close-on-content-click="false"
         :nudge-right="40"
         transition="scale-transition"
@@ -140,7 +139,6 @@
       ></v-select>
       
       <v-menu
-        v-model="menu2"
         :close-on-content-click="false"
         :nudge-right="40"
         transition="scale-transition"
@@ -169,6 +167,7 @@
         class="ma-2"
         outlined
         color="indigo"
+        @click="goBack"
       >
         Voltar
       </v-btn>
@@ -199,6 +198,11 @@ export default {
     menuChegada: false,
     menuObito: false
   }),
+  methods: {
+    goBack() {
+      this.$router.push('/search');
+    }
+  },
 }
 </script>
 

@@ -20,7 +20,7 @@
         class="ma-2"
         outlined
         color="indigo"
-        @click="doRegsiter"
+        @click="registrar"
       >
         Cadastrar Animal
       </v-btn>
@@ -53,11 +53,7 @@
       </v-btn>
     </div>
     <v-divider></v-divider>
-    <div> 
-      <info-animal></info-animal>
-      <router-view />
-    </div>
-    <cadastrar-animal></cadastrar-animal>
+    <info-animal ref="infos"></info-animal>
   </div>
 </template>
 
@@ -67,13 +63,19 @@ export default {
   name: 'Home',
   components: {
     InfoAnimal: () => import('@/views/InfoAnimal.vue'),
+    // CadastrarAnimal: () => import('@/views/CadastrarAnimal.vue'),
+  },
+  data() {
+    return {
+      hasClicked: false,
+    };
   },
   methods: {  
-    doRegister() {
-      this.$router.push('/');
+    registrar() {
+      this.$router.push('search/registration');
     },
     abrirInfo() {
-      this.$emit('');
+      this.$refs.infos.show();
     },
   },
 }
