@@ -20,7 +20,7 @@
         class="ma-2"
         outlined
         color="indigo"
-        @click="registrar"
+        @click="cadastrar"
       >
         Cadastrar Animal
       </v-btn>
@@ -70,7 +70,7 @@ export default {
     };
   },
   methods: {  
-    registrar() {
+    cadastrar() {
       this.$router.push('search/registration');
     },
     abrirInfo() {
