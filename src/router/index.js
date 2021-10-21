@@ -3,25 +3,33 @@ import VueRouter from 'vue-router'
 //import Home from '../views/Home.vue'
 import LoginScreen from '../views/LoginScreen.vue'
 import ProcuraAnimal from '../views/ProcuraAnimal.vue'
+import CadastrarAnimal from '../views/CadastrarAnimal.vue'
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
-const routes = [
-  {
-    path: '/',
-    name: 'Login',
-    component: LoginScreen
-  },
-  {
-    path: '/search',
-    name: 'Procura animal',
-    component: ProcuraAnimal
-  },
-]
-
-const router = new VueRouter({
+const routes = new VueRouter({
   mode: 'history',
-  routes
-})
+  routes: [
+    {
+      path: '/',
+      name: 'Login',
+      component: LoginScreen,
+    },
+    {
+      path: '/search',
+      name: 'Procura animal',
+      component: ProcuraAnimal,
+    },
+    {
+      path: '/search/registration',
+      name: 'Cadastrar Animal',
+      component: CadastrarAnimal,
+    },
+  ],
+});
 
-export default router
+routes.beforeEach(async (_, from, next) => {
+  next();
+});
+
+export default routes;

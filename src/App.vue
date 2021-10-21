@@ -1,11 +1,11 @@
 <template>
-  <div id="app">
+  <v-app>
     <div id="nav">
       <router-link to="/">Login</router-link> |
       <router-link to="/search">Procura Animal</router-link>
     </div>
     <router-view/>
-  </div>
+  </v-app>
 </template>
 
 <style lang="scss">

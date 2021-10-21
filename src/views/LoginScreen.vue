@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div
+  >
     <div class="image-main">
       <v-img
-        lazy-src="../assets/kek pekora.png"
-        src="../assets/kek pekora.png"
-        max-height="500"
-        max-width="500"
+        src="@/assets/icon.png"
+        max-height="150"
+        max-width="150"
       ></v-img>
     </div>
     <div class="email-main">
@@ -79,13 +79,15 @@ export default {
 .email-main{
   padding: 1% 9%;
   display: flex;
-  justify-content: center;
+  margin-left: 300px;
+  margin-right: 300px;
 }
 
 .password-main{
   padding: 1% 9%;
   display: flex;
-  justify-content: center;
+  margin-left: 300px;
+  margin-right: 300px;
 }
 
 .button-main{
