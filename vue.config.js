@@ -18,6 +18,7 @@ module.exports = {
       enableInSFC: true,
     },
   },
+  baseUrl: '/qr-snake-front/',
   publicPath: process.env.NODE_ENV === 'production'
   ? '/qr-snake-front/'
     : '/'
