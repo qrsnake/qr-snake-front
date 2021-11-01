@@ -197,8 +197,8 @@ export default {
 
 <style lang="scss" scoped>
 .all-cad {
-  margin-left: 300px;
-  margin-right: 300px;
+  margin-left: 1% 3%;
+  margin-right: 1% 3%;
 }
 
 .main-css{
