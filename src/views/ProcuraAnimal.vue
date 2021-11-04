@@ -5,26 +5,18 @@
         class="ma-2"
         outlined
         color="indigo"
+        small
       >
-        <!--Lista Aluno-->
-        <v-icon
-        middle
-        >
-        mdi-account-group
-        </v-icon>
+        Alunos
       </v-btn>
       
       <v-btn
         class="ma-2"
         outlined
         color="indigo"
+        small
       >
-        <!--Lista Especie-->
-        <v-icon
-        middle
-        >
-        mdi-account-multiple
-        </v-icon>
+        Especies
       </v-btn>
 
       <v-btn
@@ -32,13 +24,9 @@
         outlined
         color="indigo"
         @click="cadastrar"
+        small
       >
-        <!--Cadastro Animal-->
-        <v-icon
-        middle
-        >
-        mdi-account-plus
-        </v-icon>
+        Cadastro<br>Animal
       </v-btn>
 
     </div>
@@ -116,6 +104,7 @@ export default {
   padding: 1% 1%;
   display: flex;
   justify-content: space-between;
+  
 }
 
 .component-css{
