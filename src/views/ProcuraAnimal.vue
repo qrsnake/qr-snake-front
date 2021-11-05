@@ -5,15 +5,18 @@
         class="ma-2"
         outlined
         color="indigo"
+        small
       >
-        Listar Alunos
+        Alunos
       </v-btn>
+      
       <v-btn
         class="ma-2"
         outlined
         color="indigo"
+        small
       >
-        Listar Especies
+        Especies
       </v-btn>
 
       <v-btn
@@ -21,8 +24,9 @@
         outlined
         color="indigo"
         @click="cadastrar"
+        small
       >
-        Cadastrar Animal
+        Cadastro<br>Animal
       </v-btn>
 
     </div>
@@ -41,14 +45,24 @@
         color="indigo"
         @click="abrirInfo"
       >
-        Pesquisar
+        <!--Pesquisar-->
+        <v-icon
+        middle
+        >
+        mdi-magnify
+        </v-icon>
       </v-btn>
       <v-btn
         class="ma-2"
         outlined
         color="indigo"
       >
-        Ler QRcode
+        <!--Ler QRcode-->
+        <v-icon
+        middle
+        >
+        mdi-qrcode-scan
+        </v-icon>
       </v-btn>
     </div>
     <v-divider></v-divider>
@@ -82,14 +96,15 @@ export default {
 
 <style lang="scss" scoped>
 .all-search {
-  margin-left: 300px;
-  margin-right: 300px;
+  margin-left: 1% 3%;
+  margin-right: 1% 3%;
 }
 
 .main-css{
-  padding: 1% 3%;
+  padding: 1% 1%;
   display: flex;
   justify-content: space-between;
+  
 }
 
 .component-css{
