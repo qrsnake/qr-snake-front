@@ -56,6 +56,7 @@
         class="ma-2"
         outlined
         color="indigo"
+        @click="$router.push('/qrcode')"
       >
         <!--Ler QRcode-->
         <v-icon
