@@ -1,37 +1,54 @@
 <template>
   <div id="app">
-    <vue-qr-reader
-      v-if="show"
-      v-on:code-scanned="codeScanned"
-      v-on:error-captured="errorCaptured"
-      :stop-on-scanned="true"
-      :draw-on-found="true"
-      :responsive="false"
-    />
-    {{ scanned }}
-    <button @click="show = !show">Ler outro Qr</button>
+    <v-col>
+      <vue-qr-reader
+        v-if="show"
+        v-on:code-scanned="codeScanned"
+        v-on:error-captured="errorCaptured"
+        :stop-on-scanned="true"
+        :draw-on-found="true"
+        :responsive="false"
+      />
+      {{ scanned }}
+      <v-divider/>
+      <!-- <div
+        v-if="show == false"
+      > -->
+        <v-btn
+          @click="changeShow(), abrirInfo()"
+          class="ma-2"
+          outlined
+          color="indigo"
+        >
+          {{ changeName() }}
+        </v-btn>
+        <info-animal ref="infos"></info-animal>
+      <!-- </div> -->
+    </v-col>
   </div>
 </template>
 
 <script>
 import VueQrReader from "../components/VueQrReader.vue";
+import InfoAnimal from './InfoAnimal.vue';
 
 export default {
   name: "app",
   components: {
-    VueQrReader
+    VueQrReader,
+    InfoAnimal,
   },
   data() {
     return {
-      errorMessage: "",
-      scanned: "",
-      show: true
+      errorMessage: '',
+      scanned: '',
+      show: true,
     };
   },
   methods: {
     codeScanned(code) {
       this.scanned = code;
-      window.open(code,"QR Scanned");
+      // window.open(code, "QR Scanned");
     },
     errorCaptured(error) {
       switch (error.name) {
@@ -56,8 +73,22 @@ export default {
           this.errorMessage = "UNKNOWN ERROR: " + error.message;
       }
       console.error(this.errorMessage);
-    }
-  }
+    },
+    changeName() {
+      if (this.show == true){
+        return 'Ler QRCode';
+      } else {
+        return 'Ler Outro QRCode';
+      }
+    },
+    changeShow() {
+      this.show = !this.show;
+      this.scanned = '';
+    },
+    abrirInfo() {
+      this.$refs.infos.show();
+    },
+  },
 };
 </script>
 
