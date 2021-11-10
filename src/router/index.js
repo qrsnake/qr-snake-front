@@ -4,9 +4,8 @@ import VueRouter from 'vue-router'
 import LoginScreen from '../views/LoginScreen.vue'
 import ProcuraAnimal from '../views/ProcuraAnimal.vue'
 import CadastrarAnimal from '../views/CadastrarAnimal.vue'
-
 import QRCode from '../views/QRCode.vue'
-// import CadastrarAnimal from '../views/CadastrarAnimal.vue'
+
 Vue.use(VueRouter);
 
 const routes = new VueRouter({
