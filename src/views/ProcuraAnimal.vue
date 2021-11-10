@@ -74,7 +74,7 @@
 </template>
 
 <script>
-import animalResource from '../api/resources/animal'
+//import animalResource from '../api/resources/animal'
 export default {
   name: 'Home',
   components: {
@@ -92,7 +92,7 @@ export default {
       this.$router.push('search/registration');
     },
     async abrirInfo() {
-      const animalInfo = await animalResource.get({chip: this.chip})
+      //const animalInfo = await animalResource.get({chip: this.chip})
       this.$refs.infos.show();
     },
   },

@@ -172,7 +172,7 @@
 </template>
 
 <script>
-
+import animalResource from "../api/resources/animal"
 export default {
   name: 'CadastrarAnimal',
   data: () => ({
@@ -190,6 +190,10 @@ export default {
   methods: {
     goBack() {
       this.$router.push('/search');
+    },
+
+    async register() {
+      await animalResource.get({chip: this.chip})
     }
   },
 }
