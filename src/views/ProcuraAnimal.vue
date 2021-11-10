@@ -38,6 +38,8 @@
         outlined
         filled
         align="center"
+        v-bind="chip"
+        @keypress.enter="abrirInfo"
       ></v-text-field>
       <v-btn
         class="ma-2"
@@ -72,7 +74,7 @@
 </template>
 
 <script>
-
+import animalResource from '../api/resources/animal'
 export default {
   name: 'Home',
   components: {
@@ -81,6 +83,7 @@ export default {
   },
   data() {
     return {
+      chip: "",
       hasClicked: false,
     };
   },
@@ -88,7 +91,8 @@ export default {
     cadastrar() {
       this.$router.push('search/registration');
     },
-    abrirInfo() {
+    async abrirInfo() {
+      const animalInfo = await animalResource.get({chip: this.chip})
       this.$refs.infos.show();
     },
   },
