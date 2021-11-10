@@ -1,17 +1,57 @@
-// import Vue from 'vue';
+import Vue from 'vue';
 
-import axios from "axios";
-import { preventExtensions } from "core-js/core/object";
+const ApiService = {
 
-const axios = require('axios').default;
+  put(resourcePath, params) {
+    return new Promise((resolve) => {
+      Vue.axios
+        .put(resourcePath, params).then((response) => {
+          resolve(response.data);
+        })
+        .catch(() => {
+          // Just to error dont show in console, axios handle the error;
+          // console.log('Error in Put', error.response.status);
+        });
+    });
+  },
 
-async function getAnimal(chip) {
-    try {
-        const response = await axios.get('/animal?chip=', chip);
-        console.log(response);
-    } catch (error) {
-        console.error(error);
-    }
-}
+  post(resourcePath, params) {
+    return new Promise((resolve) => {
+      Vue.axios
+        .post(`${resourcePath}`, params).then((response) => {
+          resolve(response.data);
+        }).catch(() => {
+          // Just to error dont show in console, axios handle the error;
+          // console.log('Error in Post', error.response.status);
+        });
+    });
+  },
 
-export default axios;
+  delete(resourcePath, params) {
+    return new Promise((resolve) => {
+      Vue.axios
+        .delete(`${resourcePath}`, { data: params }).then((response) => {
+          resolve(response.data);
+        })
+        .catch(() => {
+          // Just to error dont show in console, axios handle the error;
+          // console.log('Error in Delete', error.response.status);
+        });
+    });
+  },
+
+  get(resourcePath, params) {
+    return new Promise((resolve) => {
+      Vue.axios
+        .get(`${resourcePath}`, { params }).then((response) => {
+          resolve(response.data);
+        })
+        .catch(() => {
+          // Just to error dont show in console, axios handle the error;
+          // console.log('Error in Query', error.response.status);
+        });
+    });
+  },
+};
+
+export default ApiService;
