@@ -12,6 +12,7 @@
         class="ma-2"
         outlined
         color="indigo"
+        @click="$router.push('search/species')"
       >
         Listar Especies
       </v-btn>
