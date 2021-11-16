@@ -5,7 +5,25 @@
       :v-for="especies in species"
       v-bind:key="especies"
     > 
-      {{ especies }}
+      {{ especies[0] }}
+    </v-btn>
+  </v-card>
+  
+  <v-card>
+    <v-btn
+      :v-for="especies in species"
+      v-bind:key="especies"
+    > 
+      {{ especies[1] }}
+    </v-btn>
+  </v-card>
+
+  <v-card>
+    <v-btn
+      :v-for="especies in species"
+      v-bind:key="especies"
+    > 
+      {{ especies[2] }}
     </v-btn>
   </v-card>
   <!-- <v-btn
