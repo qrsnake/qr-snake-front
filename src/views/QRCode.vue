@@ -11,9 +11,6 @@
       />
       {{ scanned }}
       <v-divider/>
-      <!-- <div
-        v-if="show == false"
-      > -->
         <v-btn
           @click="changeShow(), abrirInfo()"
           class="ma-2"
@@ -29,6 +26,7 @@
 </template>
 
 <script>
+import animalResource from '../api/resources/animal';
 import VueQrReader from "../components/VueQrReader.vue";
 import InfoAnimal from './InfoAnimal.vue';
 
@@ -48,6 +46,7 @@ export default {
   methods: {
     codeScanned(code) {
       this.scanned = code;
+      this.infos(this.scanned);
       // window.open(code, "QR Scanned");
     },
     errorCaptured(error) {
@@ -88,6 +87,10 @@ export default {
     abrirInfo() {
       this.$refs.infos.show();
     },
+    async infos() {
+      console.log(this.scanned);
+      await animalResource.get({chip: this.scanned});
+    }
   },
 };
 </script>

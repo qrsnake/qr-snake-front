@@ -1,7 +1,7 @@
 import Axios from "axios";
 
 const baseConfig = {
-  baseURL: 'https://qr-snake.herokuapp.com',
+  baseURL: 'http://localhost:5000',
   timeout: 60 * 1000,
 };
 

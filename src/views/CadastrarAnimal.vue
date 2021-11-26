@@ -5,19 +5,21 @@
         label="Numero do Chip"
         outlined
         align="center"
+        v-model="chip"
       ></v-text-field>
 
       <v-text-field
         label="Especie"
         outlined
         align="center"
+        v-model="especie"
       ></v-text-field>
 
       <v-text-field
         label="Nome Comum"
         outlined
         align="center"
-         
+        v-model="nome"
       ></v-text-field>
 
       <v-select
@@ -25,6 +27,7 @@
         label="Denticao"
         outlined
         align="center"
+        v-model= "denticao"
          
       ></v-select>
 
@@ -33,17 +36,17 @@
         label="Reproducao"
         outlined
         align="center"
+        v-model="reproducao"
          
       ></v-select> 
 
-      <v-select
-        :items="reproducoes"
+      <v-text-field
         label="Alimentacao"
         outlined
         align="center"
         multiple
-         
-      ></v-select>
+        v-model="alimentacao"
+      ></v-text-field>
 
       <v-select
         :items="habitats"
@@ -51,6 +54,7 @@
         outlined
         align="center"
         multiple
+        v-model="habitat"
          
       ></v-select>    
 
@@ -82,14 +86,14 @@
         label="Local de origem"
         outlined
         align="center"
-         
+        v-model="origem"
       ></v-text-field>     
 
       <v-text-field
         label="Municipio"
         outlined
         align="center"
-         
+        v-model="municipio"
       ></v-text-field>
 
       <v-select
@@ -97,24 +101,28 @@
         label="Term./Doacao"
         outlined
         align="center"
+        v-model="confirmacao"
       ></v-select> 
 
       <v-text-field
         label="Massa (g) de entrada"
         outlined
         align="center"
+        v-model="massa"
       ></v-text-field>    
 
       <v-text-field
         label="Total - Entrada"
         outlined
         align="center"
+        v-model="total"
       ></v-text-field>
 
       <v-text-field
         label="Cauda - Entrada"
         outlined
         align="center"
+        v-model="cauda"
       ></v-text-field>
 
       <v-select
@@ -122,6 +130,7 @@
         label="Idade"
         outlined
         align="center"
+        v-model="idade"
       ></v-select>     
 
       <v-select
@@ -129,6 +138,7 @@
         label="Sexo"
         outlined
         align="center"
+        v-model="sexo"
       ></v-select>    
 
       <v-select
@@ -136,17 +146,13 @@
         label="Situacao"
         outlined
         align="center"
+        v-model="situacao"
       ></v-select>
-      <v-text-field
-        outlined
-        label="Número do chip"
-      >
-        Numero do chip
-      </v-text-field>
       <v-textarea
         outlined
         placeholder="Observações"
         row="2"
+        v-model="observacao"
       >
         Observações
       </v-textarea>
@@ -164,6 +170,7 @@
         class="ma-2"
         outlined
         color="indigo"
+        @click="register"
       >
         Cadastrar Animal
       </v-btn>
@@ -185,7 +192,26 @@ export default {
     denticoes: ['Solenóglifa', 'Áglifa', 'Opistóglifa', 'Proteróglifa', 'Não identificado'],
     date: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10),
     menuChegada: false,
-    menuObito: false
+    menuObito: false,
+    chip: '',
+    sexo: '',
+    reproducao: '',
+    habitat: '',
+    confirmacao: '',
+    idade: '',
+    situacao: '',
+    denticao: '',
+    menuC: '',
+    menuO: '',
+    especie: '',
+    nome: '',
+    alimentacao: '',
+    origem: '',
+    municipio: '',
+    massa: '',
+    total: '',
+    cauda: '',
+    observacao: '',
   }),
   methods: {
     goBack() {
@@ -193,7 +219,9 @@ export default {
     },
 
     async register() {
-      await animalResource.get({chip: this.chip})
+      
+      const animal = await animalResource.post({chip: this.chip});
+      console.log(animal);
     }
   },
 }
