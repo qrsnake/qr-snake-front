@@ -231,3 +231,13 @@ export default {
   },
 };
 </script>
+
+<style>
+.camp-css{
+  padding: 1% 3%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+</style>

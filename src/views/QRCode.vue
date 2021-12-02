@@ -110,9 +110,13 @@ export default {
 
 <style>
 .back-btn{
-  display: flex;
   flex-direction: column;
-  max-width: 100%;
   justify-content: center;
+}
+@media screen and (max-width: 700px){
+  .back-btn{
+    display: flex;
+    max-width: 100%;
+  }
 }
 </style>
