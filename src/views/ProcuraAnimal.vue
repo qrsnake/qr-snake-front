@@ -119,7 +119,7 @@ export default {
   padding: 1% 1%;
   display: flex;
   justify-content: center;
-  
+
 }
 
 .id-css{
@@ -131,7 +131,7 @@ export default {
 .chip-css{
   display: flex;
   justify-content: space-between;
-  max-width: 20%;
+  max-width: 30%;
 }
 
 
