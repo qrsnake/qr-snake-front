@@ -1,8 +1,15 @@
 <template>
-  <div class="all-search">
+  <div>
+    <div class="image-main">
+      <v-img
+        src="@/assets/icon.png"
+        max-height="150"
+        max-width="150"
+      ></v-img>
+    </div>
     <div class="main-css">
       <v-btn
-        class="ma-2"
+        class="ma-2  "
         outlined
         color="indigo"
         small
@@ -11,7 +18,7 @@
       </v-btn>
       
       <v-btn
-        class="ma-2"
+        class="ma-2  "
         outlined
         color="indigo"
         small
@@ -20,7 +27,7 @@
       </v-btn>
 
       <v-btn
-        class="ma-2"
+        class="ma-2  "
         outlined
         color="indigo"
         @click="cadastrar"
@@ -41,32 +48,34 @@
         v-bind="chip"
         @keypress.enter="abrirInfo"
       ></v-text-field>
-      <v-btn
-        class="ma-2"
-        outlined
-        color="indigo"
-        @click="abrirInfo"
-      >
-        <!--Pesquisar-->
-        <v-icon
-        middle
+      <div class="info-btn"> 
+        <v-btn
+          class="ma-2"
+          outlined
+          color="indigo"
+          @click="abrirInfo"
         >
-        mdi-magnify
-        </v-icon>
-      </v-btn>
-      <v-btn
-        class="ma-2"
-        outlined
-        color="indigo"
-        @click="$router.push('qrcode')"
-      >
-        <!--Ler QRcode-->
-        <v-icon
-        middle
+          <!--Pesquisar-->
+          <v-icon
+          middle
+          >
+          mdi-magnify
+          </v-icon>
+        </v-btn>
+        <v-btn
+          class="ma-2"
+          outlined
+          color="indigo"
+          @click="$router.push('qrcode')"
         >
-        mdi-qrcode-scan
-        </v-icon>
-      </v-btn>
+          <!--Ler QRcode-->
+          <v-icon
+          middle
+          >
+          mdi-qrcode-scan
+          </v-icon>
+        </v-btn>
+      </div>
     </div>
     <v-divider></v-divider>
     <info-animal ref="infos"></info-animal>
@@ -100,40 +109,45 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.all-search {
-  margin-left: 1% 3%;
-  margin-right: 1% 3%;
+.image-main{
+  padding: 1% 3%;
+  display: flex;
+  justify-content: center;
 }
 
 .main-css{
   padding: 1% 1%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   
-}
-
-.component-css{
-  padding: 1% 3%;
-  display: flex;
-  justify-content: space-between;
 }
 
 .id-css{
   padding: 1% 3%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .chip-css{
   display: flex;
   justify-content: space-between;
-  max-width: 50%;
+  max-width: 20%;
 }
 
-.camp-css{
-  padding: 1% 3%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+
+
+@media screen and (max-width: 700px){
+  .id-css{ 
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+  .chip-css{
+    max-width: 100%;
+  }
+  .info-btn{
+    max-width: 100%;
+  }
 }
 </style>

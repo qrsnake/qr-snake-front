@@ -11,6 +11,15 @@
       />
       {{ scanned }}
       <v-divider/>
+      <div class="back-btn">
+        <v-btn
+          class="ma-2"
+          outlined
+          color="indigo"
+          @click="goBack"
+        >
+          Voltar
+        </v-btn>
         <v-btn
           @click="changeShow(), abrirInfo()"
           class="ma-2"
@@ -19,6 +28,7 @@
         >
           {{ changeName() }}
         </v-btn>
+      </div>
         <info-animal ref="infos"></info-animal>
       <!-- </div> -->
     </v-col>
@@ -44,6 +54,9 @@ export default {
     };
   },
   methods: {
+    goBack() {
+      this.$router.push('/search');
+    },
     codeScanned(code) {
       this.scanned = code;
       this.infos(this.scanned);
@@ -95,4 +108,11 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.back-btn{
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  justify-content: center;
+}
+</style>
