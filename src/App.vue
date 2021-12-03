@@ -5,9 +5,6 @@
       <!-- <router-link to="/search">Procura Animal</router-link> -->
     </div>
     <router-view/>
-  
-    
-  
   </v-app>
 </template>
 
@@ -33,4 +30,3 @@
   }
 }
 </style>
-

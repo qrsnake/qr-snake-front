@@ -48,34 +48,21 @@
         v-bind="chip"
         @keypress.enter="abrirInfo"
       ></v-text-field>
-      <div class="info-btn"> 
-        <v-btn
-          class="ma-2"
-          outlined
-          color="indigo"
-          @click="abrirInfo"
-        >
-          <!--Pesquisar-->
-          <v-icon
-          middle
-          >
-          mdi-magnify
-          </v-icon>
-        </v-btn>
-        <v-btn
-          class="ma-2"
-          outlined
-          color="indigo"
-          @click="$router.push('qrcode')"
-        >
-          <!--Ler QRcode-->
-          <v-icon
-          middle
-          >
-          mdi-qrcode-scan
-          </v-icon>
-        </v-btn>
-      </div>
+      <v-btn
+        class="ma-2"
+        outlined
+        color="indigo"
+        @click="abrirInfo"
+      >
+        Pesquisar
+      </v-btn>
+      <v-btn
+        class="ma-2"
+        outlined
+        color="indigo"
+      >
+        Ler QRcode
+      </v-btn>
     </div>
     <v-divider></v-divider>
     <info-animal ref="infos"></info-animal>

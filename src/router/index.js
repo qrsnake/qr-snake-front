@@ -5,14 +5,9 @@ import VueRouter from 'vue-router'
 // import Home from '../views/Home.vue'
 import ProcuraAnimal from '../views/ProcuraAnimal.vue'
 import CadastrarAnimal from '../views/CadastrarAnimal.vue'
-<<<<<<< HEAD
-import QRCode from '../views/QRCode.vue'
-
-=======
 
 import QRCode from '../views/QRCode.vue'
 // import CadastrarAnimal from '../views/CadastrarAnimal.vue'
->>>>>>> develop
 Vue.use(VueRouter);
 
 const routes = new VueRouter({
