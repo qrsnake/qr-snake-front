@@ -1,13 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-//import Home from '../views/Home.vue'
-// import LoginScreen from '../views/LoginScreen.vue'
-// import Home from '../views/Home.vue'
 import ProcuraAnimal from '../views/ProcuraAnimal.vue'
 import CadastrarAnimal from '../views/CadastrarAnimal.vue'
-
 import QRCode from '../views/QRCode.vue'
-// import CadastrarAnimal from '../views/CadastrarAnimal.vue'
 Vue.use(VueRouter);
 
 const routes = new VueRouter({
