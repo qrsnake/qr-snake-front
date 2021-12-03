@@ -2,6 +2,13 @@ module.exports = {
   transpileDependencies: [
     'vuetify'
   ],
+  pwa: {
+    name: 'QR snake',
+    themeColor: '#4DBA87',
+    msTileColor: '#000000',
+    appleMobileWebAppCapable: 'yes',
+    appleMobileWebAppStatusBarStyle: 'black'
+  },
   
   pluginOptions: {
     i18n: {
@@ -12,6 +19,6 @@ module.exports = {
     },
   },
   publicPath: process.env.NODE_ENV === 'production'
-    ? '/qr-snake-front/'
+  ? '/qr-snake-front/'
     : '/'
 }

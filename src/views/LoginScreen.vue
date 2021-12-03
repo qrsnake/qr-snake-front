@@ -79,15 +79,15 @@ export default {
 .email-main{
   padding: 1% 9%;
   display: flex;
-  margin-left: 300px;
-  margin-right: 300px;
+  margin-left: 1% 9%;
+  margin-right: 1% 9%;
 }
 
 .password-main{
   padding: 1% 9%;
   display: flex;
-  margin-left: 300px;
-  margin-right: 300px;
+  margin-left: 1% 9%x;
+  margin-right: 1% 9%;
 }
 
 .button-main{
