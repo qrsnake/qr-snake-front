@@ -1,8 +1,8 @@
 <template>
   <v-app>
     <div id="nav">
-      <router-link to="/">Login</router-link> |
-      <router-link to="/search">Procura Animal</router-link>
+      <!-- <router-link to="/">Login</router-link> | -->
+      <!-- <router-link to="/search">Procura Animal</router-link> -->
     </div>
     <router-view/>
   

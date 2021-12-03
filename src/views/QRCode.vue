@@ -11,9 +11,15 @@
       />
       {{ scanned }}
       <v-divider/>
-      <!-- <div
-        v-if="show == false"
-      > -->
+      <div class="back-btn">
+        <v-btn
+          class="ma-2"
+          outlined
+          color="indigo"
+          @click="goBack"
+        >
+          Voltar
+        </v-btn>
         <v-btn
           @click="changeShow(), abrirInfo()"
           class="ma-2"
@@ -22,6 +28,7 @@
         >
           {{ changeName() }}
         </v-btn>
+      </div>
         <info-animal ref="infos"></info-animal>
       <!-- </div> -->
     </v-col>
@@ -29,6 +36,7 @@
 </template>
 
 <script>
+import animalResource from '../api/resources/animal';
 import VueQrReader from "../components/VueQrReader.vue";
 import InfoAnimal from './InfoAnimal.vue';
 
@@ -46,8 +54,12 @@ export default {
     };
   },
   methods: {
+    goBack() {
+      this.$router.push('/search');
+    },
     codeScanned(code) {
       this.scanned = code;
+      this.infos(this.scanned);
       // window.open(code, "QR Scanned");
     },
     errorCaptured(error) {
@@ -88,8 +100,23 @@ export default {
     abrirInfo() {
       this.$refs.infos.show();
     },
+    async infos() {
+      console.log(this.scanned);
+      await animalResource.get({chip: this.scanned});
+    }
   },
 };
 </script>
 
-<style></style>
+<style>
+.back-btn{
+  flex-direction: column;
+  justify-content: center;
+}
+@media screen and (max-width: 700px){
+  .back-btn{
+    display: flex;
+    max-width: 100%;
+  }
+}
+</style>
