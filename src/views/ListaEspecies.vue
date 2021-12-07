@@ -1,66 +1,68 @@
 <template>
-<div>
-  <v-card>
-    <v-btn
-      :v-for="especies in species"
-      v-bind:key="especies"
-    > 
-      {{ especies[0] }}
-    </v-btn>
-  </v-card>
-  
-  <v-card>
-    <v-btn
-      :v-for="especies in species"
-      v-bind:key="especies"
-    > 
-      {{ especies[1] }}
-    </v-btn>
-  </v-card>
-
-  <v-card>
-    <v-btn
-      :v-for="especies in species"
-      v-bind:key="especies"
-    > 
-      {{ especies[2] }}
-    </v-btn>
-  </v-card>
-  <!-- <v-btn
-    elevation="10"
-    shaped
-    class="ma-2"
-    outlined
-    color="indigo"
-    @click="animal"
-
-  >
-    Cobrinha
-  </v-btn> -->
-
-</div>
+  <div>
+    <div class="back-button">
+      <v-btn 
+        class="ma-2" 
+        outlined 
+        color="indigo" 
+        @click="goBack"
+      >
+        Voltar
+      </v-btn>
+    </div>
+    <v-card 
+      class="mx-auto" 
+    >
+      <v-card-title
+        @click="show =! show"
+      > 
+        Especie 
+        <v-icon
+          class="icon-button"
+        >{{ show ? "mdi-chevron-up" : "mdi-chevron-down" }}</v-icon>
+      </v-card-title>
+      <v-expand-transition>
+        <div v-show="show">
+          <v-divider></v-divider>
+          <v-card-text>
+              INFOS DAS ESPECIES
+          </v-card-text>
+        </div>
+      </v-expand-transition>
+    </v-card>
+  </div>
 </template>
 
 <script>
-
+import animalResource from '../api/resources/animal';
 export default {
-  props: {
-    species: {
-      type: Array,
-      default: () => [],
+  data: () => ({
+    show: false,
+    nomeCientifico:'', 
+    nomeComum: '',
+    reproducao: '',
+    tipoDeAlimentação: '',
+    habitat: '',
+    denticao: '', 
+  }),
+  methods: {
+    goBack() {
+      this.$router.push("/search");
     },
   },
-  data() {
-    return {
-      especies: [
-        'Jararaca','coral', 'anaconda',
-      ]
-    };
-  },
-  // computed: {
-  //   todasEspecies() {
-  //     return this.especies;
-  //   }
-  // }
+  async get() {
+    //const especies = await animalResource.get({}); //precisa de um get para especies
+  }
 };
 </script>
+
+<style scoped>
+.back-button {
+  display: flex;
+  justify-content: space-around;
+}
+.icon-button {
+  display: flex;
+  justify-content: end;
+}
+</style>

@@ -77,6 +77,9 @@ export default {
     abrirInfo() {
       this.$refs.infos.show();
     },
+    especies() {
+      this.$router.push('search/species');
+    },
   },
 }
 </script>
