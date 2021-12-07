@@ -1,20 +1,21 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-//import Home from '../views/Home.vue'
-import LoginScreen from '../views/LoginScreen.vue'
 import ProcuraAnimal from '../views/ProcuraAnimal.vue'
 import CadastrarAnimal from '../views/CadastrarAnimal.vue'
 import ListaEspecies from '../views/ListaEspecies.vue'
-
+import QRCode from '../views/QRCode.vue'
 Vue.use(VueRouter);
 
 const routes = new VueRouter({
   mode: 'history',
+  base: process.env.NODE_ENV === 'production'
+    ? '/qr-snake-front/'
+    : '/',
   routes: [
     {
       path: '/',
       name: 'Login',
-      component: LoginScreen,
+      component: ProcuraAnimal,
     },
     {
       path: '/search',
@@ -30,6 +31,11 @@ const routes = new VueRouter({
       path: '/search/species',
       name: 'Lista de Espécies',
       component: ListaEspecies,
+    },
+    {
+      path: '/qrcode',
+      name: 'QRCode',
+      component: QRCode,
     },
   ],
 });

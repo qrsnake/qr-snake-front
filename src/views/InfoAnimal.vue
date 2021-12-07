@@ -172,6 +172,25 @@
           ></v-date-picker>
         </v-menu>
       </div>
+
+      <div class="main-css">
+        <v-btn
+          class="ma-2"
+          outlined
+          color="indigo"
+        >
+          Editar
+      </v-btn>
+
+      <v-btn
+          class="ma-2"
+          outlined
+          color="indigo"
+        >
+          Remover
+          
+      </v-btn>
+      </div>
     </div>
   </v-expand-transition>
 </template>
@@ -212,3 +231,13 @@ export default {
   },
 };
 </script>
+
+<style>
+.camp-css{
+  padding: 1% 3%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+</style>
