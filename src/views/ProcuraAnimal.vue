@@ -21,6 +21,7 @@
         class="ma-2  "
         outlined
         color="indigo"
+        @click="$router.push('search/species')"
         small
       >
         Especies
@@ -103,6 +104,9 @@ export default {
     async abrirInfo() {
       //const animalInfo = await animalResource.get({chip: this.chip})
       this.$refs.infos.show();
+    },
+    especies() {
+      this.$router.push('search/species');
     },
   },
 }
