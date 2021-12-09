@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import animalResource from '../api/resources/animal';
+//import animalResource from '../api/resources/animal';
 export default {
   data: () => ({
     show: false,
